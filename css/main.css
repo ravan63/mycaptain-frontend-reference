@@ -32,6 +32,7 @@ header{
     display: none;
 }
 
+
 .menu{
     width: 25px;
     margin-top: 45%;
@@ -340,23 +341,10 @@ nav ul li a:hover{
         background-color: inherit;
     }
 
-    .scroll{
-        width: 30px;
-        animation: move 1s infinite alternate;
-    }
-
-    @keyframes move {
-        0%{
-            transform: translateY(0px);
-        }
-        100%{
-            transform: translateY(20px);
-        }
-    }
-
+   
 }
 
-@media only screen and(min-height:1600px){
+@media only screen and(min-width:1600px){
     .server{
         width: 40%;
         margin: 5em auto 4em 15%;
@@ -387,36 +375,28 @@ nav ul li a:hover{
         justify-content: center;
     }
     
-
 }
 
 
-@keyframes sway{
+.scroll{
+    width: 30px;
+    animation: move 0.8s infinite alternate
+}
+
+@keyframes move {
     0%{
-        transform: skewX(0deg);
-    }
-    50%{
-        transform: skewX(-2deg);
+        transform: translateY(0px);
     }
     100%{
-        transform: skewX(0deg);
+        transform: translateY(20px);
     }
-}
-
-#left-dark-tree{
-    animation: sway 1.5s infinite linear;
-    transform-origin: bottom;
-}
-
-#left-big-tree{
-    animation: sway 3s infinite linear;
-    transform-origin: bottom;
 }
 
 #right-purple-tree{
     animation: sway-right 1.8s infinite linear;
     transform-origin: bottom;
 }
+
 #right-dark-tree{
     animation: sway-right 1.4s infinite linear;
     transform-origin: bottom;
@@ -426,6 +406,7 @@ nav ul li a:hover{
     animation: sway-right 2.9s infinite linear;
     transform-origin: bottom;
 }
+
 
 @keyframes sway-right{
     0%{
@@ -437,4 +418,32 @@ nav ul li a:hover{
     100%{
         transform: skewX(-2deg);
     }
+}
+
+@keyframes sway-left{
+    0%{
+        transform: skewX(-2deg);
+    }
+    50%{
+        transform: skewX(0deg);
+    }
+    100%{
+        transform: skewX(-2deg);
+    }
+}
+
+
+#left-purple-tree{
+    animation: sway-left 1.8s infinite linear;
+    transform-origin: bottom 
+}
+
+#left-dark-tree{
+    animation: sway-left 1.4s infinite linear;
+    transform-origin: bottom 
+}
+
+#left-big-tree{
+    animation: sway-left 2.9s infinite linear;
+    transform-origin: bottom 
 }
